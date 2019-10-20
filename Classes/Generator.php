@@ -31,7 +31,10 @@ class Generator
     public function  getNextBinary()
     {
         $this->generateNumber();
-        return decbin($this->number);
+        $binary = decbin($this->number);
+        // zero fill string to 32 characters long
+        $binary = sprintf("%032s", $binary);
+        return $binary;
     }
 }
 

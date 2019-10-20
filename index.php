@@ -26,8 +26,8 @@ if (Validator::error()) {
 }
 
 // Number generators with factor values
-$A_generator = new Generator($first_param, 16807);
-$B_generator = new Generator($second_param, 48271);
+$A_generator = new Generator($first_param, $configuration['a_factor']);
+$B_generator = new Generator($second_param, $configuration['b_factor']);
 
 // Checker values form configuration
 Checker::initialize($configuration['checker_start'], $configuration['checker_length']);
